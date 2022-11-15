@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             x:Class="Ejercicio2_2.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="fsdnd">
+
+    <StackLayout
+        Padding="15">
+
+        <Frame
+            BackgroundColor="White"
+            Margin="0, 0, 0, 10"
+            CornerRadius="10">
+            <controls:SignaturePadView
+	            x:Name ="signatureView"
+	            StrokeWidth ="2" 
+                StrokeColor ="Black"
+                PromptFontSize = "14"
+                BackgroundColor = "#CEE3F6"
+                HeightRequest="280"/>
+        </Frame>
+        <Frame
+            BackgroundColor="White"
+            Margin="0, 0, 0, 10"
+            CornerRadius="10">
+            <StackLayout>
+                <StackLayout
+                    Margin="0, 0, 0, 15">
+                    <Label
+                        Text="Nombre"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        FontSize="18"/>
+                    <Entry
+                        x:Name="txtNombre"
+                        Placeholder="Ingrese su nombre"
+                        Keyboard="Plain"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label
+                        Text="Descripcion"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        FontSize="18"/>
+                    <Entry
+                        x:Name="txtDescripcion"
+                        Placeholder="Ingrese una descipcion"
+                        Keyboard="Plain"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+        <Frame
+            BackgroundColor="White"
+            Margin="0, 0, 0, 10"
+            CornerRadius="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Lista Firmas"
+                    x:Name="btnLista"
+                    CornerRadius="12"
+                    TextColor="White"
+                    BackgroundColor="#C3BD0E"
+                    Clicked="btnLista_Clicked"/>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="a SQLite"
+                    x:Name="btnGuardar"
+                    CornerRadius="12"
+                    TextColor="White"
+                    BackgroundColor="#2F8E08"
+                    Clicked="btnGuardar_Clicked"/>
+            </Grid>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>

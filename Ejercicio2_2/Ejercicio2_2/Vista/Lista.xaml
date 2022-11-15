@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio2_2.Vista.Lista"
+             Title="Lista de firmas"
+             NavigationPage.HasNavigationBar="True"
+             BackgroundImageSource="fsdnd">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="20">
+            <Frame
+                BackgroundColor="White"
+                CornerRadius="10">
+                <StackLayout>
+                    <CollectionView
+                         x:Name="txtListaFirmas"
+                         SelectionMode="Single">
+                        <CollectionView.EmptyView>
+                            <ActivityIndicator 
+                                IsRunning="True"
+                                VerticalOptions="CenterAndExpand"
+                                Color="#2B2D42"/>
+                        </CollectionView.EmptyView>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout
+                                    Padding="5">
+                                    <Frame
+                                        Padding="5"
+                                        BackgroundColor="#CEE3F6"
+                                        CornerRadius="8">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="2"
+                                                Source="{Binding firma}"
+                                                HeightRequest="100"
+                                                Aspect="AspectFit"/>
+                                            <StackLayout
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="2">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width=".6*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Grid.Column="0"
+                                                        Text="Nombre: "
+                                                        TextColor="Black"
+                                                        FontAttributes="Bold"
+                                                        FontSize="18"/>
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Grid.Column="1"
+                                                        Text="{Binding nombre}"
+                                                        TextColor="Black"
+                                                        FontAttributes="Italic"
+                                                        FontSize="18"/>
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Grid.Column="0"
+                                                        Text="Descripcion: "
+                                                        TextColor="Black"
+                                                        FontAttributes="Bold"
+                                                        FontSize="18"/>
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Grid.Column="1"
+                                                        Text="{Binding descripcion}"
+                                                        TextColor="Black"
+                                                        FontAttributes="Italic"
+                                                        FontSize="18"/>
+                                                </Grid>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
